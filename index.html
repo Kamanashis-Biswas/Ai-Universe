@@ -28,7 +28,7 @@
         </section>
         <section>
             <div id="product-container" class="row row-cols-1 row-cols-md-3 g-4">
-                
+
             </div>
             <div id="show-all" class="my-4 text-center">
                 <button id="btn-show-all" class="btn btn-success">Show All...</button>
@@ -38,9 +38,31 @@
         <section id="loader" class="d-none">
             <div style="height:400px" class="d-flex justify-content-center align-items-center">
                 <div class="spinner-border text-success" role="status">
-                  <span class="visually-hidden">Loading...</span>
+                    <span class="visually-hidden">Loading...</span>
                 </div>
-              </div>
+            </div>
+        </section>
+        <!-- Modal Contains -->
+        <section>
+            <!-- Modal -->
+            <div class="modal fade" id="productDetailModal" tabindex="-1" aria-labelledby="productDetailModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="productDetailModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <!-- <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <!-- custom JavaScript -->
