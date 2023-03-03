@@ -70,10 +70,49 @@ loadProducts({n:6});
 
 
 
-const loadProductDetails = async id => {
-    console.log(id);
+const loadProductDetails = async id => {;
     const url = `https://openapi.programming-hero.com/api/ai/tool/${id}`;
     const res = await fetch(url);
     const data = await res.json();
-    console.log(data.data);
+    displayProductDetails(data.data);
+}
+
+const displayProductDetails=product=>{
+    console.log(product);
+    
+    const productDetails=document.getElementById('product-details');
+    productDetails.innerHTML=`
+    <div>
+        <div>
+            <h5 class="modal-title">${product.description ? product.description : 'No Description Found'}</h5>
+            <div class="d-flex gap-3">
+                <div class="p-4">
+                    <p class="m-0">${product.pricing[0].price}</p>
+                    <p>${product.pricing[0].plan}</p>
+                </div>
+                <div class="p-4">
+                    <p class="m-0">${product.pricing[1].price}</p>
+                    <p>${product.pricing[1].plan}</p>
+                </div>
+                <div class="p-4">
+                    <p class="m-0">${product.pricing[2].price}</p>
+                    <p>${product.pricing[2].plan}</p>
+                </div>
+            </div>
+            <div>
+                <h5 class="modal-title fw-bold">Features</h5>
+                <ul>
+                    <li>${product.features[1].feature_name}</li>
+                    <li>${product.features[2].feature_name}</li>
+                    <li>${product.features[3].feature_name}</li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <img class="img-fluid" src="${product.image_link[0]}" alt="">
+            <h5 class="modal-title">${product.input_output_examples.input ? input_output_examples.input : 'No Data Found'}</h5>
+        </div>
+    </div>
+   
+    `;
 }
