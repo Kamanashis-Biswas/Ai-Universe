@@ -7,7 +7,7 @@ const toggleSpinner = isLoading => {
     }
 }
 //data load
-const loadProducts = async (sort=false, n=6) => {
+const loadProducts = async ({sort,n}) => {
     const url = `https://openapi.programming-hero.com/api/ai/tools`
     toggleSpinner(true);
     const res = await fetch(url);
@@ -25,7 +25,7 @@ const loadProducts = async (sort=false, n=6) => {
 
 }
 
-const displayProducts = (products,n) => {
+const displayProducts = (products,n=6) => {
     const productContainer = document.getElementById('product-container');
     productContainer.innerHTML = '';
     //display 6 product
@@ -59,14 +59,14 @@ const displayProducts = (products,n) => {
 }
 
 document.getElementById('sort-btn').addEventListener('click', function () {
-    loadProducts(true);
+    loadProducts({sort:true});
 })
 
 document.getElementById('btn-show-all').addEventListener('click',function(){
-    loadProductDetails(n=12);
+    loadProducts({n:12});
 })
 
-loadProducts();
+loadProducts({n:6});
 
 
 
@@ -75,5 +75,5 @@ const loadProductDetails = async id => {
     const url = `https://openapi.programming-hero.com/api/ai/tool/${id}`;
     const res = await fetch(url);
     const data = await res.json();
-    console.log(data);
+    console.log(data.data);
 }
