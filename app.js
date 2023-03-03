@@ -82,30 +82,41 @@ const displayProductDetails=product=>{
     
     const productDetails=document.getElementById('product-details');
     productDetails.innerHTML=`
-    <div>
-        <div>
+    <div class="bg-light d-flex gap-4">
+        <div class="p-2 rounded border">
             <h5 class="modal-title">${product.description ? product.description : 'No Description Found'}</h5>
-            <div class="d-flex gap-3">
-                <div class="p-4">
-                    <p class="m-0">${product.pricing[0].price}</p>
-                    <p>${product.pricing[0].plan}</p>
+            <div class="d-flex gap-3 mt-4">
+                <div class="p-4 bg-white rounded text-center text-success">
+                    <p class="m-0 fw-bold">${product.pricing[0].price}</p>
+                    <p class="m-0 fw-bold">${product.pricing[0].plan}</p>
                 </div>
-                <div class="p-4">
-                    <p class="m-0">${product.pricing[1].price}</p>
-                    <p>${product.pricing[1].plan}</p>
+                <div class="p-4 bg-white rounded text-center text-warning">
+                    <p class="m-0 fw-bold">${product.pricing[1].price}</p>
+                    <p class="m-0 fw-bold">${product.pricing[1].plan}</p>
                 </div>
-                <div class="p-4">
-                    <p class="m-0">${product.pricing[2].price}</p>
-                    <p>${product.pricing[2].plan}</p>
+                <div class="p-4 bg-white rounded text-center text-danger">
+                    <p class="m-0 fw-bold">${product.pricing[2].price}</p>
+                    <p class="m-0 fw-bold">${product.pricing[2].plan}</p>
                 </div>
             </div>
-            <div>
-                <h5 class="modal-title fw-bold">Features</h5>
-                <ul>
-                    <li>${product.features[1].feature_name}</li>
-                    <li>${product.features[2].feature_name}</li>
-                    <li>${product.features[3].feature_name}</li>
-                </ul>
+            <div class="d-flex gap-4 mt-4">
+                <div>
+                    <h5 class="modal-title fw-bold">Features</h5>
+                    <ul>
+                        <li>${product.features[1].feature_name}</li>
+                        <li>${product.features[2].feature_name}</li>
+                        <li>${product.features[3].feature_name}</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="modal-title fw-bold">Integration</h5>
+                    <ul>
+                        <li>${product.integrations[0]}</li>
+                        <li>${product.integrations[1]}</li>
+                        <li>${product.integrations[2]}</li>
+                    </ul>
+                </div>
+                    
             </div>
         </div>
         <div>
