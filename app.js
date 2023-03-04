@@ -84,8 +84,8 @@ const displayProductDetails=product=>{
     
     const productDetails=document.getElementById('product-details');
     productDetails.innerHTML=`
-    <div class="bg-light d-flex flex-column flex-md-row gap-4">
-        <div class="p-2 rounded border">
+    <div class="d-flex flex-column flex-md-row gap-4">
+        <div class="p-3 rounded border bg-light">
             <h5 class="modal-title">${product.description ? product.description : 'No Description Found'}</h5>
             <div class="d-flex flex-column flex-md-row  gap-3 mt-4">
                 <div class="p-4 bg-white rounded text-center text-success">
@@ -119,13 +119,13 @@ const displayProductDetails=product=>{
                     
             </div>
         </div>
-        <div class="p-2 rounded border">
+        <div class="p-3 rounded border">
             <div style="position: relative;text-align: center;">
                 <img class="img-fluid" src="${product.image_link[0]}" alt="">
                 <div style="position: absolute;top: 8px;right: 16px;" class="bg-danger text-white rounded px-2">Accuracy ${product.accuracy.score}</div>
             </div>
             <h5 class="modal-title text-center mt-4">${product.input_output_examples[0].input}</h5>
-            <p class="modal-title text-center mt-4">${product.input_output_examples[0].output}<p>
+            <p class="modal-title text-center mt-4">${product.input_output_examples[0].output ? product.input_output_examples[0].output :'No Data Found'}<p>
         </div>
     </div>
    
