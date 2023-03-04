@@ -120,7 +120,10 @@ const displayProductDetails=product=>{
             </div>
         </div>
         <div class="p-2 rounded border">
-            <img class="img-fluid" src="${product.image_link[0]}" alt="">
+            <div style="position: relative;text-align: center;">
+                <img class="img-fluid" src="${product.image_link[0]}" alt="">
+                <div style="position: absolute;top: 8px;right: 16px;" class="bg-danger text-white rounded px-2">Accuracy ${product.accuracy.score}</div>
+            </div>
             <h5 class="modal-title">${product.input_output_examples.input ? input_output_examples.input : 'No Data Found'}</h5>
         </div>
     </div>
