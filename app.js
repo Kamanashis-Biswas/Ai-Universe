@@ -1,3 +1,4 @@
+let n=6;
 const toggleSpinner = isLoading => {
     const loaderSection = document.getElementById('loader');
     if (isLoading) {
@@ -59,10 +60,11 @@ const displayProducts = (products,n=6) => {
 }
 
 document.getElementById('sort-btn').addEventListener('click', function () {
-    loadProducts({sort:true});
+    loadProducts({sort:true,n});
 })
 
 document.getElementById('btn-show-all').addEventListener('click',function(){
+    n=12;
     loadProducts({n:12});
 })
 
@@ -111,9 +113,7 @@ const displayProductDetails=product=>{
                 <div>
                     <h5 class="modal-title fw-bold">Integration</h5>
                     <ul>
-                        <li>${product.integrations[0]}</li>
-                        <li>${product.integrations[1]}</li>
-                        <li>${product.integrations[2]}</li>
+                    ${product.integrations.map(e=>('<li>'+e+'</li>')).join().replaceAll(',','')}
                     </ul>
                 </div>
                     
@@ -124,7 +124,8 @@ const displayProductDetails=product=>{
                 <img class="img-fluid" src="${product.image_link[0]}" alt="">
                 <div style="position: absolute;top: 8px;right: 16px;" class="bg-danger text-white rounded px-2">Accuracy ${product.accuracy.score}</div>
             </div>
-            <h5 class="modal-title">${product.input_output_examples.input ? input_output_examples.input : 'No Data Found'}</h5>
+            <h5 class="modal-title text-center mt-4">${product.input_output_examples[0].input}</h5>
+            <p class="modal-title text-center mt-4">${product.input_output_examples[0].output}<p>
         </div>
     </div>
    
