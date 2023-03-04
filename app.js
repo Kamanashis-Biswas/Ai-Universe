@@ -122,7 +122,7 @@ const displayProductDetails=product=>{
         <div class="p-3 rounded border">
             <div style="position: relative;text-align: center;">
                 <img class="img-fluid" src="${product.image_link[0]}" alt="">
-                <div style="position: absolute;top: 8px;right: 16px;" class="bg-danger text-white rounded px-2">Accuracy ${product.accuracy.score}</div>
+                <div style="position: absolute;top: 8px;right: 16px;" class="bg-danger text-white rounded px-2">Accuracy ${product.accuracy.score ? product.accuracy.score :'No Found'}</div>
             </div>
             <h5 class="modal-title text-center mt-4">${product.input_output_examples[0].input}</h5>
             <p class="modal-title text-center mt-4">${product.input_output_examples[0].output ? product.input_output_examples[0].output :'No Data Found'}<p>
