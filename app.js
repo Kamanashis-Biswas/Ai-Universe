@@ -101,7 +101,7 @@ const displayProductDetails=product=>{
                     <p class="m-0 fw-bold">${product.pricing[2].plan}</p>
                 </div>
             </div>
-            <div class="d-flex gap-4 mt-4">
+            <div class="d-flex flex-column flex-md-row gap-4 mt-4">
                 <div>
                     <h5 class="modal-title fw-bold">Features</h5>
                     <ul>
