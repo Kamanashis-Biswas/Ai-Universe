@@ -89,11 +89,11 @@ const displayProductDetails=product=>{
             <h5 class="modal-title">${product.description ? product.description : 'No Description Found'}</h5>
             <div class="d-flex flex-column flex-md-row  gap-3 mt-4">
                 <div class="p-4 bg-white rounded text-center text-success">
-                    <p class="m-0 fw-bold">${product.pricing[0].price}</p>
+                <p class="m-0 fw-bold">${product.pricing[0].price==='No cost'?'Free of Cost':product.pricing[0].price}</p>
                     <p class="m-0 fw-bold">${product.pricing[0].plan}</p>
                 </div>
                 <div class="p-4 bg-white rounded text-center text-warning">
-                    <p class="m-0 fw-bold">${product.pricing[1].price}</p>
+                    <p class="m-0 fw-bold">${product.pricing[1].price==='No cost'?'Free of Cost':product.pricing[1].price}</p>
                     <p class="m-0 fw-bold">${product.pricing[1].plan}</p>
                 </div>
                 <div class="p-4 bg-white rounded text-center text-danger">
